@@ -1,5 +1,5 @@
 import React from 'react';
-import CalculatorInfo from "./components/CalculatorInfo";
+import Calculator from "./components/Calculator";
 import Nav from "./components/Nav/Index";
 import Footer from "./components/Footer";
 
@@ -13,9 +13,10 @@ function App() {
         <Nav />
         <Switch>
    
-          <Route exact path="/calculator" component={CalculatorInfo} />
+          <Route exact path="/calculator" component={Calculator} />
           
         </Switch>
+        <Footer />
       </div>
     </Router>
   );

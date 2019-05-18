@@ -1,7 +1,10 @@
 import React from 'react';
+import "./style.css";
 
-function CalculatorInfo({ children }){
+function Calculator({ children }){
     return (
+        <div className="card">
+      <div className="content">
         <form>
             <label>
                 Monthly/Income:
@@ -13,7 +16,10 @@ function CalculatorInfo({ children }){
             </label>
             <input type="submit" value="Submit" />
         </form>
+     </div>
+     </div>
+     
     );
 }
-export default CalculatorInfo;
+export default Calculator;
 
