@@ -9,7 +9,9 @@
   },
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "server": "nodemon index.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -22,8 +24,10 @@
   },
   "homepage": "https://github.com/tudorbejinari/Project3#readme",
   "dependencies": {
+    "concurrently": "^4.1.0",
     "cookie-session": "^1.3.3",
     "express": "^4.16.4",
+    "materialize-css": "^1.0.0",
     "mongoose": "^5.5.9",
     "nodemon": "^1.19.0",
     "passport": "^0.4.0",
