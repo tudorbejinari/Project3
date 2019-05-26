@@ -12,5 +12,3 @@ const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 ReactDOM.render(
 <Provider store={store}><App /></Provider>, 
 document.querySelector('#root'));
-console.log('key',process.env.REACT_APP_ZWS_ID);
-console.log('envirnm', process.env.NODE_ENV);
