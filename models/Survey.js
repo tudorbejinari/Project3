@@ -5,6 +5,7 @@ const surveySchema = new Schema ({
     title: String,
     body: String,
     subject: String,
-    recipients: [String]
+    _user: { type: Schema.Types.ObjectId, ref: 'User'},
+    dateSaved: Date
 });
-mongoose.model('survey', surveySchema);
+mongoose.model('surveys', surveySchema);

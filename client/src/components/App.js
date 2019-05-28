@@ -5,8 +5,9 @@ import * as actions from '../actions';
 
 import Header from './Header';
 import Landing from './Landing';
-const Dashboard = () => <h2>Dashboard</h2>;
-const SurveyNew = () => <h2>SurveyNew</h2>;
+import Dashboard from './Dashboard';
+import Calculator from './Calculator';
+import Saved from './Saved';
 
 
 class App extends Component {
@@ -20,8 +21,9 @@ this.props.fetchUser();
       <div>
           <Header />
           <Route exact path="/" component={Landing} />
+          <Route exact path="/calculator" component={Calculator} />
           <Route exact path="/surveys" component={Dashboard} />
-          <Route  path="/surveys/new" component={SurveyNew} />
+          <Route  path="/saved" component={Saved} />
       </div>
       </BrowserRouter>
         </div>
