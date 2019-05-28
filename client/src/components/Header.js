@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { Link } from "react-router-dom";
-import Calculator from './Calculator';
 
 class Header extends Component{
 renderContent(){
@@ -10,11 +9,12 @@ renderContent(){
             return;
 
         case false:
-            return <li><a href="/auth/google">Login with Google</a></li>;
+            return <li><a className="waves-effect waves-light btn" href="/auth/google">Login with Google</a></li>;
         default:
             return [ 
-            <li key="1"><Calculator /></li>,
-            <li key="2"><a href="/api/logout">Logout</a></li> 
+                <li key="1"><a className="waves-effect waves-light btn" href="/calculator">Calculator</a></li>, 
+                <li key="2"><a className="waves-effect waves-light btn" href="/saved">My Houses</a></li>, 
+                <li key="3"><a className="waves-effect waves-light btn" href="/api/logout">Logout</a></li> 
         ];
     }
 }
@@ -23,7 +23,7 @@ renderContent(){
         return (
             <nav>
                 <div className='nav-wrapper'>
-                <Link to={this.props.auth ? '/surveys' : '/'}
+                <Link to={this.props.auth ? '/' : '/'}
                  className='left brand-logo'>
                      <i className="large material-icons">home</i>DreamHouse
                
