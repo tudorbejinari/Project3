@@ -1,8 +1,24 @@
 import React, {Component} from 'react';
+import SearchBar from './SearchBar';
+import yelp from '../apis/yelp';
+import axios from 'axios';
 
 class Calculator extends Component {
+  onTermSubmit = term => {
+    yelp.get('/search', {
+      params: {
+        location: term
+      }
+    });
+  };
+
+
+
+
+
     render() {
         return (
+      
 
             <div className="row">
             <div className="col s12 m9">
@@ -17,13 +33,13 @@ class Calculator extends Component {
       <div className="row">
         <div className="input-field col s9">
           <i className="small material-icons prefix">location_on</i>
-          <input type="text" id="autocomplete-input" class="autocomplete"/>
-          <label for="autocomplete-input">Enter zip code</label>
+          <input type="text" id="autocomplete-input" className="autocomplete"/>
+          <label htmlFor="autocomplete-input">Enter zip code</label>
         </div>
         <div className="input-field col s9">
           <i className="material-icons prefix">monetization_on</i>
-          <input type="text" id="autocomplete-input" class="autocomplete"/>
-          <label for="autocomplete-input">1.000.000</label>
+          <input type="text" id="autocomplete-input" className="autocomplete"/>
+          <label htmlFor="autocomplete-input">1.000.000</label>
         </div>
         <div className="row">
         <div className="input-field col s9">
@@ -31,8 +47,13 @@ class Calculator extends Component {
     </div>
     </div>
       </div>
+      <div className="ui container">
+      <SearchBar onFormSubmit={this.onTermSubmit} />
+      </div>
     </div>
+
           </div>
+        
 
         );
     }

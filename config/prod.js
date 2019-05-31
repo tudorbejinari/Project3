@@ -3,5 +3,6 @@ module.exports = {
     googleClientSecret: process.env.GOOGLE_CLIENT_SECRET,
     mongoURI: process.env.MONGO_URI,
     cookieKey: process.env.COOKIE_KEY,
-    zwsId: process.env.ZWS_ID
+    zwsId: process.env.ZWS_ID,
+    yelpApiKey: process.env.YELP_API_KEY
 };
