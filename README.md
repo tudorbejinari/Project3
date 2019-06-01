@@ -3,6 +3,8 @@
 
 
 ## Tools Used: 
+### In this app we used a litle bit of React, MongoDB, Node, all over the place learning FullStack insted of fancy React Components.
+Also :
 * Node Api
 * Express 
 * React
