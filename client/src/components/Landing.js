@@ -7,8 +7,8 @@ const Landing = ()=> {
   <div className="row">
       <div className="card">
       <div className="card-content teal lighten-2 white-text">
-          <h5 className="center-align">Find out how much you can afford with our easy-to-use calculator <br/> 
-          Discover the right place you'll love to live!</h5>
+          <h5 className="center-align">Find out how much you can afford with our easy-to-use calculator! <br/> 
+          Find the high rated Mortgage Lenders or real estate agents with our App!</h5>
         </div>
         <div className="card-image">
     

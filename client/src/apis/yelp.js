@@ -1,15 +1,34 @@
 
 require("dotenv").config({path: "../../.env.development"})
 
-const KEY = process.env.REACT_APP_YELP_API_KEY;
+const apiKey = process.env.REACT_APP_YELP_API_KEY;
+console.log(apiKey )
 
-let myHeaders = new Headers();
-myHeaders.append("Authorization", "Bearer " + KEY);
-
-fetch("https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?categories=realestatesvcs&limit=5&location={term}", {
-  headers: myHeaders 
-}).then((res) => {
-  return res.json();
-}).then((json) => {
-  console.log(json);
-});
+const Yelp = {
+    search(term, location, sortBy) {
+      return fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${term}&limit=12&location=${location}&sort_by=${sortBy}`, {
+        headers: {
+          Authorization: `Bearer ${apiKey}`
+        }
+      }).then(response => {
+        return response.json();
+      }).then(jsonResponse => {
+        if (jsonResponse.businesses) {
+          return jsonResponse.businesses.map(business => ({
+            id: business.id,
+            imageSrc: business.image_url,
+            name: business.name,
+            address: business.location.address1,
+            city: business.location.city,
+            state: business.location.state,
+            zipCode: business.location.zip_code,
+            category: business.categories[0].title,
+            rating: business.rating,
+            reviewCount: business.review_count
+          }));
+        }
+      });
+    }
+  };
+  
+  export default Yelp;
