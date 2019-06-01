@@ -3,3 +3,11 @@
 
 
 ## Tools Used:
+* Node Api
+* Express 
+* React
+* Passport
+* MongoDB
+* Mongoose
+* Axios
+* Mortgage JS
