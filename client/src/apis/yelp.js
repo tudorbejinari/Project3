@@ -1,5 +1,6 @@
 
 require("dotenv").config({path: "../../.env.development"})
+require("dotenv").config({path: "../../.env.production"})
 
 const apiKey = process.env.REACT_APP_YELP_API_KEY;
 console.log(apiKey )
