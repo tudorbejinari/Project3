@@ -13,7 +13,8 @@ renderContent(){
         default:
             return [ 
                 <li key="1"><a className="waves-effect waves-light btn" href="/calculator">Calculator</a></li>, 
-                <li key="2"><a className="waves-effect waves-light btn" href="/saved">My Houses</a></li>, 
+                <li key="2"><a className="waves-effect waves-light btn" href="/saved">Recommendations</a></li>, 
+                <li key="4"><a className="waves-effect waves-light btn" href="/search">Search</a></li>, 
                 <li key="3"><a className="waves-effect waves-light btn" href="/api/logout">Logout</a></li> 
         ];
     }
@@ -25,7 +26,7 @@ renderContent(){
                 <div className='nav-wrapper'>
                 <Link to={this.props.auth ? '/' : '/'}
                  className='left brand-logo'>
-                     <i className="large material-icons">home</i>DreamHouse
+                     <i className="huge material-icons">medium_settings_system_daydream</i>DreamHouse
                
                 </Link>
                 <ul className="right">
